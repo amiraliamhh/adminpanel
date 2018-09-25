@@ -1,0 +1,40 @@
+.r-quick-access-container {
+    background: #ffffff;
+    box-shadow: 0px 1px 7px 1px #ccc;
+    border-radius: 3px;
+
+    .r-quick-access-title {
+        color: #333333;
+    }
+
+    .r-rotated-hr {
+        background-color:#dddddd;
+        -webkit-transform:rotate(90deg);
+        transform: rotate(90deg);
+        margin-top: 4.5em;
+        width: 6em;
+        height: 1px;
+        border: 1px;
+    }
+
+    .r-sell-to-customer-input {
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        width: 9rem;
+        height: 2.5rem;
+        background: #dddddd;
+    }
+
+    .r-save-button {
+        background-color: #90d7b2;
+        color: #298a58;
+        width: 9rem;
+        height: 2.5rem;
+        font-size: .9rem;
+        font-weight: bold;
+    }
+
+    .r-input-label {
+        color: #666666;
+    }
+}

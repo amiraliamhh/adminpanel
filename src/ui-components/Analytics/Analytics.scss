@@ -1,0 +1,30 @@
+.r-chart-box {
+    background: #ffffff;
+    box-shadow: 0px 1px 7px 1px #ccc;
+    border-radius: 3px;
+
+    .r-chart-container {
+        width: 100%;
+    
+        // canvas {
+        //     width: 500px;
+        // }
+    }
+
+    .r-chart-box-title {
+        color: #444444;
+    }
+
+    .r-new-users-icon {
+        width: 4em;
+    }
+
+    .r-new-data-counter {
+        border-bottom: 1px solid #dddddd;
+
+        button {
+            margin-bottom: -1em;
+            cursor: default !important;
+        }
+    }
+}
