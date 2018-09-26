@@ -1,9 +1,15 @@
 import * as React from 'react';
 import './Table.scss';
 
+export interface IRowData {
+    type: 'text'|'image';
+    data: any;
+    action?: (e: React.MouseEvent<HTMLElement>) => void;
+}
+
 interface ITableProps {
     heads: string[];
-    rows: string[][];
+    rows: IRowData[][];
 }
 
 export default class RabTable extends React.Component<ITableProps> {
@@ -12,7 +18,7 @@ export default class RabTable extends React.Component<ITableProps> {
             <table className="table table-hover text-right">
                 {this.generateTabelHead(this.props.heads)}
                 <tbody>
-                    {this.props.rows.map((row: string[]) => this.generateTableRow(row))}
+                    {this.props.rows.map((row: IRowData[], index: number) => this.generateTableRow(row, index))}
                 </tbody>
             </table>
         );
@@ -32,13 +38,30 @@ export default class RabTable extends React.Component<ITableProps> {
         );
     }
 
-    private generateTableRow(data: string[]) {
-        const tds = data.map((datum: string, index: number) => (
-            <td key={index} >{datum}</td>
-        ));
+    private generateTableRow(data: IRowData[], ind: number) {
+
+        const tds = data.map((datum: IRowData, index: number) => {
+            if (datum.type === 'text') {
+                return <td key={index} >{datum.data}</td>
+
+            } else if(datum.type === 'image' && datum.action) {
+                return (
+                    <td key={index} >
+                        <img src={datum.data} className="r-table-icon r-clickable" alt="" onClick={datum.action} />
+                    </td>
+                );
+                
+            } else {
+                return (
+                    <td key={index} >
+                        <img src={datum.data} className="r-table-icon" alt=""/>
+                    </td>
+                );
+            }
+        });
 
         return (
-            <tr>
+            <tr key={ind} >
                 {tds}
             </tr>
         );

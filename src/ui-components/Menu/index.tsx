@@ -84,10 +84,6 @@ export default class Menu extends React.Component {
                 </div>
                 <div className="w-100 position-absolute d-lg-none r-menu-mobile">
                     <div className="r-menu-mobile-item-list float-right">
-                        {/* <div className="d-flex justify-content-center align-items-center" >
-                            <p className="d-inline mt-3 mr-3" >داشبورد</p>
-                            <img src={DashboardIcon} className="r-menu-items-icon-mobile" alt=""/>
-                        </div> */}
                         {this.getMobileMenu(this.menuItems)}
                     </div>
                 </div>

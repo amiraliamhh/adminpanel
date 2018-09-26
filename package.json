@@ -4,6 +4,7 @@
   "proxy": "http://91.109.23.203/api",
   "private": true,
   "dependencies": {
+    "@types/query-string": "^6.1.0",
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
     "babel-jest": "^22.1.0",
@@ -26,6 +27,7 @@
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
+    "query-string": "^6.1.0",
     "raf": "3.4.0",
     "react": "^16.5.1",
     "react-dev-utils": "^5.0.1",

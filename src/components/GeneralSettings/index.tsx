@@ -1,9 +1,16 @@
 import * as React from 'react';
 
+import Header from '../../ui-components/Header';
+import Menu from '../../ui-components/Menu';
+
 export default class GeneralSettings extends React.Component {
     public render() {
         return (
-            <div>general settings</div>
+            <React.Fragment>
+                <Header />
+                <Menu />
+                <div>general settings</div>
+            </React.Fragment>
         )
     }
 }
