@@ -40,7 +40,9 @@ export default class Pagination extends React.Component<IPaginationProps> {
 
         const end = (
             <React.Fragment key="2">
-                <li className="page-item"><NavLink className="page-link" to={`${route}?page=${length}`}>{length}</NavLink></li>
+                <li className="page-item">
+                    <NavLink className="page-link" to={`${route}?page=${length}`}>{length}</NavLink>
+                </li>
                 <li className="page-item">
                   <NavLink className="page-link" to={`${route}?page=${this.nextPage(current, length)}`} aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
@@ -56,6 +58,8 @@ export default class Pagination extends React.Component<IPaginationProps> {
     private prevPage(current: number): number {
         if (current === 1) {
             return 1;
+        } else if (isNaN(current)) {
+            return 1;
         } else {
             return current - 1;
         }
@@ -64,6 +68,8 @@ export default class Pagination extends React.Component<IPaginationProps> {
     private nextPage(current: number, length: number): number {
         if (current === length) {
             return length;
+        } else if (isNaN(current)) {
+            return 1;
         } else {
             return current + 1;
         }

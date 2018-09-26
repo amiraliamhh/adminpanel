@@ -58,7 +58,7 @@ export default class Users extends React.Component {
                 <Header />
                 <Menu />
                 <div className="container r-users-container mt-5 p-3 pb-5">
-                    <TableMenu title="لیست کاربران" />
+                    <TableMenu title="لیست کاربران" hasSearch={true} />
                     <Table heads={this.trueHeads} rows={this.body} />
 
                     <div className="container-fluid mt-5">

@@ -7,6 +7,7 @@ import TitleIcon from './assets/title-icon.png'
 
 interface ITableMenuProps {
     title: string;
+    hasSearch: boolean;
 }
 
 export default class TableMenu extends React.Component<ITableMenuProps> {
@@ -25,14 +26,16 @@ export default class TableMenu extends React.Component<ITableMenuProps> {
                     </div>
 
                     <div className="d-inline-block float-right">
-                        <p className="d-inline mr-1 r-table-title">لیست کاربران</p>
+                        <p className="d-inline mr-1 r-table-title">{this.props.title}</p>
                         <img className="r-table-menu-icon" src={TitleIcon} alt=""/>
                     </div>
                 </div>
 
-                <div className="w-100">
+                {this.props.hasSearch ? (
+                    <div className="w-100">
                     <input type="text" className="form-control w-25 float-right mb-5 text-right r-search-input" dir="rtl" placeholder="جستجو ..." />
                 </div>
+                ) : '' }
             </React.Fragment>
         );
     }
