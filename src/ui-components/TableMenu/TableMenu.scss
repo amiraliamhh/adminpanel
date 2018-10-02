@@ -5,7 +5,9 @@
     }
 
     .r-table-title {
+        margin-top: 2rem !important;
         font-size: 1.1rem;
+        font-weight: bold;
     }
 
     .r-table-menu-icon {
@@ -13,10 +15,14 @@
     }
 }
 
-.r-search-input {
-    background: #dddddd;
-}
-
-.r-search-input::placeholder {
-    color: #666666;
+.r-search-input-container {
+    margin-top: 2rem;
+    
+    .r-search-input {
+        background: #f8f8f8;
+    }
+    
+    .r-search-input::placeholder {
+        color: #666666;
+    }
 }

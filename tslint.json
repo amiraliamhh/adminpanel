@@ -10,6 +10,8 @@
   "rules": {
     "variable-name": [false],
     "no-console": [false],
-    "ordered-imports": [false]
+    "ordered-imports": [false],
+    "no-unused-variable": [true, {"ignore-pattern": "^_"}],
+    "jsx-no-lambda": [false]
   }
 }

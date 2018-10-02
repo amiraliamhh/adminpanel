@@ -1,0 +1,22 @@
+.r-dropdown:hover {
+    cursor: pointer;
+}
+
+.r-dropdown {
+    color: #777777;
+
+    .r-dropdown-content-container {
+        min-width: 3rem;
+        z-index: 1;
+        padding-bottom: 0px !important;
+    
+        p {
+            font-size: .8rem;
+            color: #666666;
+        }
+    
+        p:hover {
+            cursor: pointer;
+        }
+    }
+}

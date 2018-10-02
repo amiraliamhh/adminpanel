@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import SaveButton from '../../design-system/SaveButton';
 import './QuickAccess.scss';
 
 export default class QuickAccess extends React.Component {
@@ -15,7 +16,7 @@ export default class QuickAccess extends React.Component {
                                 <input type="text" className="r-sell-to-customer-input text-center text-danger" value="1234" />
                                 <p className="d-inline ml-2 r-input-label" dir="rtl" >قیمت دلار:</p>
                             </div>
-                            <button className="btn btn-lg r-save-button mt-2" >ذخیره</button>
+                            <SaveButton />
                         </div>
                         <div>
                             <hr className="r-rotated-hr" />
@@ -26,7 +27,7 @@ export default class QuickAccess extends React.Component {
                                 <input type="text" className="r-sell-to-customer-input text-center text-success" value="1234" />
                                 <p className="d-inline ml-2 r-input-label" dir="rtl" >قیمت دلار:</p>
                             </div>
-                            <button className="btn btn-lg r-save-button mt-2" >ذخیره</button>
+                            <SaveButton />
                         </div>
                     </div>
                 </div>
@@ -40,6 +41,7 @@ export default class QuickAccess extends React.Component {
                                 <input type="text" className="r-sell-to-customer-input text-center text-success" value="1234" />
                                 <p className="d-inline ml-2 r-input-label" dir="rtl" >قیمت دلار:</p>
                             </div>
+                            <SaveButton />
                         </div>
                     </div>
                 </div>
@@ -52,6 +54,7 @@ export default class QuickAccess extends React.Component {
                                 <input type="text" className="r-sell-to-customer-input text-center text-danger" value="1234" />
                                 <p className="d-inline ml-2 r-input-label" dir="rtl" >قیمت دلار:</p>
                             </div>
+                            <SaveButton />
                         </div>
                     </div>
                 </div>

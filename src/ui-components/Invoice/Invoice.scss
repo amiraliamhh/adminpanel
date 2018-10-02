@@ -1,0 +1,17 @@
+.r-table-borderless {
+    td {
+        border: none;
+    }
+
+    .r-tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .r-invisible {
+        opacity: 0;
+    }
+
+    .r-td-prop {
+        font-size: .9rem;
+    }
+}

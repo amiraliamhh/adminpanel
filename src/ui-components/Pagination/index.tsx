@@ -14,7 +14,7 @@ export default class Pagination extends React.Component<IPaginationProps> {
         return (
             <nav>
               <ul className="pagination">
-                {this.generateLinks(5, '/users')}
+                {this.generateLinks(this.props.length, '/users')}
               </ul>
             </nav>
         );

@@ -49,8 +49,152 @@ export default class Users extends React.Component {
                 data: '1',
                 type: 'text',
             }
-        ]
+        ],
+        [
+            {
+                action: (e) => {console.log()},
+                data: EditIcon,
+                type: 'image',
+            },
+            {
+                data: NoIcon,
+                type: 'image',
+            },
+            {
+                data: OkIcon,
+                type: 'image',
+            },
+            {
+                data: '1397/5/2',
+                type: 'text',
+            },
+            {
+                data: 'amiraliamhh@gmail.com',
+                type: 'text',
+            },
+            {
+                data: '09190912275',
+                type: 'text',
+            },
+            {
+                data: 'امیرعلی عامری',
+                type: 'text',
+            },
+            {
+                data: '1',
+                type: 'text',
+            }
+        ],
+        [
+            {
+                action: (e) => {console.log()},
+                data: EditIcon,
+                type: 'image',
+            },
+            {
+                data: NoIcon,
+                type: 'image',
+            },
+            {
+                data: OkIcon,
+                type: 'image',
+            },
+            {
+                data: '1397/5/2',
+                type: 'text',
+            },
+            {
+                data: 'amiraliamhh@gmail.com',
+                type: 'text',
+            },
+            {
+                data: '09190912275',
+                type: 'text',
+            },
+            {
+                data: 'امیرعلی عامری',
+                type: 'text',
+            },
+            {
+                data: '1',
+                type: 'text',
+            }
+        ],
+        [
+            {
+                action: (e) => {console.log()},
+                data: EditIcon,
+                type: 'image',
+            },
+            {
+                data: NoIcon,
+                type: 'image',
+            },
+            {
+                data: OkIcon,
+                type: 'image',
+            },
+            {
+                data: '1397/5/2',
+                type: 'text',
+            },
+            {
+                data: 'amiraliamhh@gmail.com',
+                type: 'text',
+            },
+            {
+                data: '09190912275',
+                type: 'text',
+            },
+            {
+                data: 'امیرعلی عامری',
+                type: 'text',
+            },
+            {
+                data: '1',
+                type: 'text',
+            }
+        ],
+        [
+            {
+                action: (e) => {console.log()},
+                data: EditIcon,
+                type: 'image',
+            },
+            {
+                data: NoIcon,
+                type: 'image',
+            },
+            {
+                data: OkIcon,
+                type: 'image',
+            },
+            {
+                data: '1397/5/2',
+                type: 'text',
+            },
+            {
+                data: 'amiraliamhh@gmail.com',
+                type: 'text',
+            },
+            {
+                data: '09190912275',
+                type: 'text',
+            },
+            {
+                data: 'امیرعلی عامری',
+                type: 'text',
+            },
+            {
+                data: '1',
+                type: 'text',
+            }
+        ],
     ]
+
+    public componentDidUpdate() {
+        console.log('component did update')
+    }
 
     public render() {
         return (

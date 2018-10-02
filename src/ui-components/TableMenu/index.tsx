@@ -32,9 +32,9 @@ export default class TableMenu extends React.Component<ITableMenuProps> {
                 </div>
 
                 {this.props.hasSearch ? (
-                    <div className="w-100">
-                    <input type="text" className="form-control w-25 float-right mb-5 text-right r-search-input" dir="rtl" placeholder="جستجو ..." />
-                </div>
+                    <div className="w-100 r-search-input-container">
+                        <input type="text" className="form-control w-25 float-right mb-5 text-right r-search-input" dir="rtl" placeholder="جستجو ..." />
+                    </div>
                 ) : '' }
             </React.Fragment>
         );

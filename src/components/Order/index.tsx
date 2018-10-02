@@ -1,35 +1,23 @@
 import * as React from 'react';
 
+import './Order.scss';
 import Header from '../../ui-components/Header';
 import Menu from '../../ui-components/Menu';
 import TableMenu from '../../ui-components/TableMenu';
 import Invoice from '../../ui-components/Invoice';
 import { IInvoiceMenuProps } from '../../ui-components/InvoiceMenu';
-import './User.scss';
 
-export default class User extends React.Component {
+export default class Order extends React.Component {
     private invoiceMenuProps: IInvoiceMenuProps = {
-        className: "mb-2 justify-content-between",
+        className: "justify-content-end",
         items: [
             {
-                link: 'id-verification',
-                name: 'تایید هویت'
+                link: 'status',
+                name: 'وضعیت'
             },
             {
-                link: 'wallets',
-                name: 'کیف پول'
-            },
-            {
-                link: 'bank-info',
-                name: 'اطلاعات بانکی'
-            },
-            {
-                link: 'contact-info',
-                name: 'اطلاعات تماس',
-            },
-            {
-                link: 'personal-info',
-                name: 'اطلاعات شخصی',
+                link: 'info',
+                name: 'مشخصات'
             },
         ]
     }
@@ -39,8 +27,8 @@ export default class User extends React.Component {
             <React.Fragment>
                 <Header />
                 <Menu />
-                <div className="container r-user-container mt-5 p-3 pb-5">
-                    <TableMenu title="ویرایش کاربر" hasSearch={false} />
+                <div className="container r-order-container mt-5 p-3 pb-5">
+                    <TableMenu title="#huhiwehf983hf3479tfg279gf23f سفارش" hasSearch={false} />
                     <Invoice menu={this.invoiceMenuProps} tds={[{property: 'کارت ملی', value: 'val'},{property: 'کارت ملی', value: 'val'}]} />
                 </div>
             </React.Fragment>

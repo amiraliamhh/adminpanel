@@ -1,7 +1,26 @@
 .r-table-icon {
-    width: 1.5rem;
+    width: 1rem;
+    height: 1rem;
 }
 
 .r-clickable {
     cursor: pointer;
+}
+
+.r-td-text {
+    font-size: .85rem;
+    color: #444444;
+}
+
+.r-edit-img {
+    img {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+}
+
+.r-table {
+    tr {
+        border-bottom: 1px solid #eeeeee;
+    }
 }
