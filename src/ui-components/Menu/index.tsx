@@ -53,12 +53,12 @@ export default class Menu extends React.Component {
         },
         {
             icon: TicketIcon,
-            link: '/',
+            link: '/tickets',
             title: 'تیکت',
         },
         {
             icon: ChatIcon,
-            link: '/',
+            link: '/chat',
             title: 'چت آنلاین',
         }
     ];

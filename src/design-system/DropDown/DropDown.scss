@@ -4,19 +4,29 @@
 
 .r-dropdown {
     color: #777777;
+    font-size: .9rem;
 
     .r-dropdown-content-container {
         min-width: 3rem;
         z-index: 1;
-        padding-bottom: 0px !important;
-    
-        p {
-            font-size: .8rem;
-            color: #666666;
-        }
-    
-        p:hover {
-            cursor: pointer;
+        padding: 0px !important;
+
+        .r-dropdown-options {
+            background-color: #fff;
+            box-shadow: 0px 1px 7px 1px #ccc;
+            padding: 0px !important;
+            min-width: 6rem;
+            border-radius: 5px;
+
+            .r-dropdown-option {
+                font-size: .8rem;
+                color: #666666;
+            }
+        
+            .r-dropdown-option:hover {
+                cursor: pointer;
+                background-color: #f8f8f8;
+            }
         }
     }
 }

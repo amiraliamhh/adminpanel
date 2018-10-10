@@ -8,14 +8,17 @@ export interface IRowData {
 }
 
 export interface ITableProps {
+    className?: string;
     heads: string[];
     rows: IRowData[][];
+    thClassName?: string;
+    iconWidth?: string;
 }
 
 export default class RabTable extends React.Component<ITableProps> {
     public render() {
         return (
-            <table className="table table-borderless table-striped r-table text-right">
+            <table className={`table table-borderless table-striped r-table text-center ${this.props.className}`}>
                 {this.generateTabelHead(this.props.heads)}
                 <tbody>
                     {this.props.rows.map((row: IRowData[], index: number) => this.generateTableRow(row, index))}
@@ -26,7 +29,7 @@ export default class RabTable extends React.Component<ITableProps> {
 
     private generateTabelHead(heads: string[]) {
         const ths = heads.map((head: string, index: number) => (
-            <th scope="col" key={index} className="text-center" >{head}</th>
+            <th scope="col" key={index} className={`${this.props.thClassName ? this.props.thClassName : 'text-center'}`} >{head}</th>
         ));
 
         return (
@@ -47,7 +50,13 @@ export default class RabTable extends React.Component<ITableProps> {
             } else if(datum.type === 'image' && datum.action) {
                 return (
                     <td key={index} className="r-edit-img" >
-                        <img src={datum.data} className="r-table-icon r-clickable" alt="" onClick={datum.action} />
+                        <img 
+                        src={datum.data} 
+                        className="r-table-icon r-clickable" 
+                        alt=""
+                        onClick={datum.action}
+                        style={{width: this.props.iconWidth || 'default'}}
+                         />
                     </td>
                 );
                 
@@ -58,7 +67,11 @@ export default class RabTable extends React.Component<ITableProps> {
                 return (
                     <td key={index} >
                         <div className="d-flex justify-content-center" >
-                            <img src={datum.data} className="r-table-icon" alt=""/>
+                            <img 
+                            src={datum.data} 
+                            className="r-table-icon" 
+                            alt=""
+                            />
                         </div>
                     </td>
                 );

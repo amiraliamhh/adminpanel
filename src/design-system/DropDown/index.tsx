@@ -58,13 +58,23 @@ export default class DropDown extends React.Component<IDropDownProps, IDropDownS
                 </div>
                 <div className="d-block bg-primary w-100">
                     <div 
-                    className={`position-absolute bg-light p-3 r-dropdown-content-container ${this.state.dropdownOpen ? "d-block" : "d-none"}`} 
+                    className={`position-absolute r-dropdown-content-container ${this.state.dropdownOpen ? "d-block" : "d-none"}`} 
                     >
+                        <div className="r-dropdown-options" >
                         {
                             this.props.options.map((option: string, index: number) => {
-                                return <p onClick={() => {this.selectOption(index)}} key={index + 1} >{option}</p>
+                                return (
+                                    <div
+                                    onClick={() => {this.selectOption(index)}} 
+                                    className="w-100 p-2 r-dropdown-option"
+                                    key={index + 1} 
+                                    >
+                                    {option}
+                                    </div>
+                                );
                             })
                         }
+                        </div>
                     </div>
                 </div>
             </div>

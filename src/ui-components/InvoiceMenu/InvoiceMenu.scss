@@ -3,5 +3,15 @@
 
     a {
         font-size: .95rem;
+        margin: 0 !important;
+        padding-bottom: 1rem;
+    }
+
+    a.selected {
+        border-bottom: 3px #429afe solid;
+    }
+
+    a:hover {
+        text-decoration: none;
     }
 }

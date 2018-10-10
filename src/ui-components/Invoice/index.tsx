@@ -6,6 +6,7 @@ import './Invoice.scss';
 export interface IInvoiceTd {
     property: string;
     value: string|JSX.Element;
+    endOfArr?: boolean;
 }
 
 export interface IInvoiceProps {
@@ -38,6 +39,7 @@ export default class Invoice extends React.Component<IInvoiceProps> {
                                 <td>0</td>
                                 <td>0</td>
                                 <td>0</td>
+                                <td>0</td>
                             </tr>
                         </tbody>
                     </table>
@@ -49,9 +51,9 @@ export default class Invoice extends React.Component<IInvoiceProps> {
 
     private generateTDs(tds: IInvoiceTd[]): JSX.Element[] {
         return tds.map((td: IInvoiceTd, index: number) => (
-            <tr className="r-tr" >
+            <tr className={`r-tr ${td.endOfArr ? 'r-end-of-arr' : null}`} key={index} >
                 <td className="font-weight-bold r-td-prop" >{td.property}:</td>
-                <td colSpan={6} >{td.value}</td>
+                <td colSpan={8} >{td.value}</td>
             </tr>
         ));
     }

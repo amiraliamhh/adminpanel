@@ -8,6 +8,9 @@ import TitleIcon from './assets/title-icon.png'
 interface ITableMenuProps {
     title: string;
     hasSearch: boolean;
+    removeFilter?: boolean;
+    removeUpdate?: boolean;
+    updateAction?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export default class TableMenu extends React.Component<ITableMenuProps> {
@@ -15,15 +18,17 @@ export default class TableMenu extends React.Component<ITableMenuProps> {
         return (
             <React.Fragment>
                 <div className="w-100 r-table-menu mb-4">
-                    <div className="d-inline-block">
-                        <p className="d-inline mr-1" >فیلتر</p>
-                        <img className="r-table-menu-icon d-inline" src={FilterIcon} alt=""/>
-                    </div>
-
-                    <div className="d-inline-block ml-4">
-                        <p className="d-inline mr-1">بروزرسانی</p>
-                        <img className="r-table-menu-icon" src={RefreshIcon} alt=""/>
-                    </div>
+                    {!this.props.removeFilter ? 
+                        <div className="d-inline-block r-clickable">
+                            <p className="d-inline mr-1" >فیلتر</p>
+                            <img className="r-table-menu-icon d-inline" src={FilterIcon} alt=""/>
+                        </div> : ''}
+                    
+                    {!this.props.removeUpdate ?
+                        <div onClick={this.props.updateAction} className="d-inline-block ml-4">
+                            <p className="d-inline mr-1 r-clickable">بروزرسانی</p>
+                            <img className="r-table-menu-icon" src={RefreshIcon} alt=""/>
+                        </div> : ''}
 
                     <div className="d-inline-block float-right">
                         <p className="d-inline mr-1 r-table-title">{this.props.title}</p>

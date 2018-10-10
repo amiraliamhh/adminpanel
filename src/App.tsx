@@ -3,6 +3,7 @@ import * as React from 'react';
 import './App.css';
 import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
+import { createStore, combineReducers } from 'redux';
 
 import Home from './components/Home';
 import Users from './components/Users';
@@ -13,9 +14,24 @@ import SellToUserSettings from './components/SellToUserSettings';
 import BuyFromUserSettings from './components/BuyFromUserSettings';
 import BuyFromUserSetting from './components/BuyFromUserSetting';
 import GeneralSettings from './components/GeneralSettings';
+import Chat from './components/Chat';
 import Login from './components/Login';
+import Loading from './components/Loading';
+import PrivateRoute from './components/PrivateRoute';
+import Tickets from './components/Tickets';
+import Ticket from './components/Ticket';
 
-import RabCheckbox from './design-system/Checkbox';
+import allReducers from './redux/reducers/index';
+import SuccessAlert from './ui-components/SuccessAlert';
+import FailAlert from './ui-components/FailAlert';
+
+const windowAny = window as any;
+
+const Reducers = combineReducers(allReducers);
+export const Store = createStore(
+  Reducers,
+  windowAny.__REDUX_DEVTOOLS_EXTENSION__ && windowAny.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 class App extends React.Component {
   public render() {
@@ -23,8 +39,11 @@ class App extends React.Component {
       <React.Fragment>
         <BrowserRouter>
           <div>
+            <Loading />
+            <SuccessAlert />
+            <FailAlert />
             <Route path="/login" exact={true} component={Login} />
-            <Route path="/" exact={true} component={Home} />
+            <PrivateRoute path="/" exact={true} Component={Home} />
             <Route path="/users" exact={true} component={Users} />
             <Route path="/user" exact={true} component={User} />
             <Route path="/orders" exact={true} component={Orders} />
@@ -33,7 +52,9 @@ class App extends React.Component {
             <Route path="/buy-from-user-settings" exact={true} component={BuyFromUserSettings} />
             <Route path="/buy-from-user-setting" exact={true} component={BuyFromUserSetting} />
             <Route path="/general-settings" exact={true} component={GeneralSettings} />
-            <Route path="/ds/checkbox" exact={true} component={RabCheckbox} />
+            <Route path="/tickets" exact={true} component={Tickets} />
+            <Route path="/ticket" exact={true} component={Ticket} />
+            <Route path="/chat" exact={true} component={Chat} />
           </div>
         </BrowserRouter>
       </React.Fragment>
