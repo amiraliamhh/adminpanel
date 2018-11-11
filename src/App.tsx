@@ -21,6 +21,8 @@ import PrivateRoute from './components/PrivateRoute';
 import Tickets from './components/Tickets';
 import Ticket from './components/Ticket';
 
+import RabNotification from './components/Notification';
+
 import allReducers from './redux/reducers/index';
 import SuccessAlert from './ui-components/SuccessAlert';
 import FailAlert from './ui-components/FailAlert';
@@ -39,22 +41,23 @@ class App extends React.Component {
       <React.Fragment>
         <BrowserRouter>
           <div>
+            <RabNotification />
             <Loading />
             <SuccessAlert />
             <FailAlert />
             <Route path="/login" exact={true} component={Login} />
             <PrivateRoute path="/" exact={true} Component={Home} />
-            <Route path="/users" exact={true} component={Users} />
-            <Route path="/user" exact={true} component={User} />
-            <Route path="/orders" exact={true} component={Orders} />
-            <Route path="/order" exact={true} component={Order} />
-            <Route path="/sell-to-user-settings" exact={true} component={SellToUserSettings} />
-            <Route path="/buy-from-user-settings" exact={true} component={BuyFromUserSettings} />
-            <Route path="/buy-from-user-setting" exact={true} component={BuyFromUserSetting} />
-            <Route path="/general-settings" exact={true} component={GeneralSettings} />
-            <Route path="/tickets" exact={true} component={Tickets} />
-            <Route path="/ticket" exact={true} component={Ticket} />
-            <Route path="/chat" exact={true} component={Chat} />
+            <PrivateRoute path="/users" exact={true} Component={Users} />
+            <PrivateRoute path="/user" exact={true} Component={User} />
+            <PrivateRoute path="/orders" exact={true} Component={Orders} />
+            <PrivateRoute path="/order" exact={true} Component={Order} />
+            <PrivateRoute path="/sell-to-user-settings" exact={true} Component={SellToUserSettings} />
+            <PrivateRoute path="/buy-from-user-settings" exact={true} Component={BuyFromUserSettings} />
+            <PrivateRoute path="/buy-from-user-setting" exact={true} Component={BuyFromUserSetting} />
+            <PrivateRoute path="/general-settings" exact={true} Component={GeneralSettings} />
+            <PrivateRoute path="/tickets" exact={true} Component={Tickets} />
+            <PrivateRoute path="/ticket" exact={true} Component={Ticket} />
+            <PrivateRoute path="/chat" exact={true} Component={Chat} />
           </div>
         </BrowserRouter>
       </React.Fragment>

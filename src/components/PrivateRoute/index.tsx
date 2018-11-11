@@ -1,13 +1,55 @@
 import * as React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import axios from 'axios';
 
-export default class PrivateRoute extends React.Component<any> {
+import { changeAdminJWT, changeIsAuthStatus, getAuthStatus } from '../../redux/helpers/admin';
+import { Store } from 'src/App';
+
+interface IPrivateRouteState {
+    isAuth: boolean;
+}
+
+export default class PrivateRoute extends React.Component<any, IPrivateRouteState> {
     constructor(props: any) {
         super(props);
+
+        changeIsAuthStatus(true);
+
+        this.state = {
+            isAuth: getAuthStatus()
+        }
+
+        this.isAuthenticated = this.isAuthenticated.bind(this);
+    }
+
+    public componentWillMount() {
+        this.isAuthenticated();
+
+        Store.subscribe(() => {
+            this.setState({
+                isAuth: getAuthStatus()
+            });
+        });
     }
 
     public isAuthenticated() {
-        return true;
+        if (!window.localStorage.getItem('admin_jwt')) {
+            changeIsAuthStatus(false);
+            return;
+        }
+
+        const admin_jwt = window.localStorage.getItem('admin_jwt') as string;
+        changeAdminJWT(admin_jwt);
+
+        axios.post('https://bitooman.ir/v1/read-admin', {query: {admin_jwt}})
+        .then(({data}) => {
+            if (data.responseCode !== 200) {
+                changeIsAuthStatus(false);
+            }
+        })
+        .catch((err: any) => {
+            changeIsAuthStatus(false);
+        })
     }
 
     public render() {
@@ -15,7 +57,7 @@ export default class PrivateRoute extends React.Component<any> {
 
         return (
             <Route {...rest} render={(props: any) => {
-                return (this.isAuthenticated() === true 
+                return (this.state.isAuth 
                 ? <Component {...props} />
                 : <Redirect to='/login' />)
             }} />

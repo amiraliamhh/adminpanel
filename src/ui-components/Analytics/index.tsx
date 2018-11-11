@@ -10,7 +10,7 @@ export default class Analytics extends React.Component {
     public componentDidMount() {
         const c: any = document.getElementById("usersData");
         const ctx: any = c.getContext('2d');
-        const x = new Chart(ctx, {
+        new Chart(ctx, {
             data: {
                 datasets: [{
                     backgroundColor: [
@@ -36,12 +36,10 @@ export default class Analytics extends React.Component {
             },
             type: 'line',
         });
-
-        console.log(x);
 
         const c1: any = document.getElementById("ordersData");
         const ctx1: any = c1.getContext('2d');
-        const x1 = new Chart(ctx1, {
+        new Chart(ctx1, {
             data: {
                 datasets: [{
                     backgroundColor: [
@@ -67,8 +65,6 @@ export default class Analytics extends React.Component {
             },
             type: 'line',
         });
-
-        console.log(x1);
         
     }
 

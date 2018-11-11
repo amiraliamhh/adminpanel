@@ -32,6 +32,18 @@ export default class Ticket extends React.Component {
                         <p className="text-right r-ticket-title" ><FontAwesomeIcon icon={faBook} /> عنوان تیکت: {this.ticket_content}</p>
                         <p className="text-right r-ticket-title" ><FontAwesomeIcon icon={faQuestionCircle} /> {this.ticket_content2}</p>
                     </div>
+
+                    <div className="col-11 ml-5 mr-5 p-0 ">
+                        <textarea 
+                        className="w-100 text-right p-2 r-answer-ticket-textarea"
+                        name="" 
+                        id=""
+                        placeholder="پاسخ تیکت" />
+
+                        <div className="w-100 text-right">
+                        <button className="float" >ارسال</button>
+                        </div>
+                    </div>
                 </div>
             </React.Fragment>
         );
